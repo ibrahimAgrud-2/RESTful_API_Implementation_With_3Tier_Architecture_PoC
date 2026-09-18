@@ -52,7 +52,8 @@ namespace API_Implementation.Controllers
         [HttpGet("Passed")]
         public ActionResult<IEnumerable<Student>> GetPassedStudents()
         {
-            return Ok(StudentDataSimulation.StudentList.Where(student=>student.Grade>50).ToList());
+            //logic business layerda olur
+            //return Ok(StudentDataSimulation.StudentList.Where(student=>student.Grade>50).ToList());
         }
 
 
