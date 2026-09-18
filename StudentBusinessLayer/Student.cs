@@ -27,6 +27,9 @@ namespace StudentBusinessLayer
         {
             return StudentDataAccess.GetAverageGrade();
         }
-
+        public static StudentDTO GetStudentByID(int ID)
+        {
+            return StudentDataAccess.GetStudentByID(ID);
+        }
     }
 }
