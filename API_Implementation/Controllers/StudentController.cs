@@ -72,10 +72,10 @@ namespace API_Implementation.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public ActionResult<double> GetAverageGrade()
         {
+       
 
-          
             //Çeşitlilik olamsı açısından bu sefer eğer hiç student yoksa notFound status code'u dönderelim
-            if(StudentDataSimulation.StudentList.Count==0)
+            if (StudentDataSimulation.StudentList.Count==0)
             {
                 //bu No Student Available mesajı body'de gidecek. 
                 return NotFound("No Student Available");
