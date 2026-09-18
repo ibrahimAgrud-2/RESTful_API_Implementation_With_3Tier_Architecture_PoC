@@ -44,7 +44,7 @@ namespace API_Implementation.Controllers
             return Ok(StudentList);
         }
         
-        //isimlendirmeler ile (all, passed) attriburte'lar birbirinden farklı olmuş oldu. Ama daha okunaklı URL'lere adına Attrüburlara her zaman değişkenlerde olduğu gibi alakalı isim vermek gerekir.
+        //isimlendirmeler ile (all, passed) attriburte'lar birbirinden farklı olmuş oldu. Ama daha okunaklı URL'lere adına Attrüburlara her zaman değişkenlerde olduğu gibi alakalı isim vermek gerekir.    
         [HttpGet("Passed")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -68,15 +68,25 @@ namespace API_Implementation.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public ActionResult<double> GetAverageGrade()
         {
-       
+
 
             //Çeşitlilik olamsı açısından bu sefer eğer hiç student yoksa notFound status code'u dönderelim
-            if (StudentDataSimulation.StudentList.Count==0)
+            //if (StudentDataSimulation.StudentList.Count==0)
+            //{
+            //    //bu No Student Available mesajı body'de gidecek. 
+            //    return NotFound("No Student Available");
+            //}
+            //return Ok(StudentDataSimulation.StudentList.Average(student=>student.Grade));
+
+            double averageGrade = StudentBusinessLayer.Student.GetAverageGrade();
+
+            if(averageGrade==0)
             {
-                //bu No Student Available mesajı body'de gidecek. 
-                return NotFound("No Student Available");
+                return NotFound("No data Avaliable in the table");
             }
-            return Ok(StudentDataSimulation.StudentList.Average(student=>student.Grade));
+
+            return Ok(averageGrade);
+
         }
 
 
