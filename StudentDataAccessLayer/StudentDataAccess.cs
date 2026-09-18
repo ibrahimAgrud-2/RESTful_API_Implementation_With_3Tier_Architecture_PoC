@@ -66,9 +66,8 @@ namespace StudentDataAccessLayer
             List<StudentDTO> Students = new List<StudentDTO>();
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
-                string query = "select * from students where grade>50";
-
-                using (SqlCommand cmd = new SqlCommand(query, connection))
+          
+                using (SqlCommand cmd = new SqlCommand("SP_GetPassedStudents", connection))
                 {
 
 

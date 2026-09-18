@@ -50,10 +50,20 @@ namespace API_Implementation.Controllers
 
 
         [HttpGet("Passed")]
-        public ActionResult<IEnumerable<Student>> GetPassedStudents()
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public ActionResult<IEnumerable<StudentDTO>> GetPassedStudents()
         {
             //logic business layerda olur
             //return Ok(StudentDataSimulation.StudentList.Where(student=>student.Grade>50).ToList());
+
+            List<StudentDTO> StudentList = StudentBusinessLayer.Student.GetPassedStudents();
+            if (StudentList.Count == 0)
+            {
+                return NotFound("No Data Available in the Table");
+            }
+
+            return Ok(StudentList);
         }
 
 
