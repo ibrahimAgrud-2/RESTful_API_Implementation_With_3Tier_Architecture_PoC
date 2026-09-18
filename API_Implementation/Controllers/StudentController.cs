@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Hosting;
+using StudentDataAccessLayer;
 using System;
 using System.Data;
 
@@ -29,9 +30,18 @@ namespace API_Implementation.Controllers
         //IEnumarable ise client kısmı için list, array, dictionary fark etmeyeceği, onu sadece JSON formatında veri alacağı için hangi türden veri döndürdüğümüzün pek önemi yok. Daha doğrusu sadeec List<Student> demek yerine durumu daha geneleştiriyoruz. IEnumarable<student> diyoruz. IEnumarable zaten list'in daha geniş halidir. Bu durumda biz geriye bir koleksiyon döncekek. Ne olduğu pek önemli diğer onu al ve JSON olarak istediğini yap şeklinde düşünüyoruz.
         //!!!! Arka planda ASP framework JSON serialization ile veriyi JSON'a çeviriyor
         [HttpGet("All")]
-        public ActionResult<IEnumerable<Student>> GetStudentList()
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public ActionResult<IEnumerable<StudentDTO>> GetStudentList()
         {
-            return Ok(StudentDataSimulation.StudentList);
+
+            List<StudentDTO> StudentList = StudentBusinessLayer.Student.GetAllStudents();
+            if(StudentList.Count==0)
+            {
+                return NotFound("No Data Available in the Table");
+            }
+
+            return Ok(StudentList);
         }
 
 

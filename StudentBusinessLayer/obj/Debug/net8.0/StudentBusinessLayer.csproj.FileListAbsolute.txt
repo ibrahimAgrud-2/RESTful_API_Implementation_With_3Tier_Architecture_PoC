@@ -1,0 +1,16 @@
+C:\Users\ibrah\Masaüstü\API_Implementation\StudentBusinessLayer\bin\Debug\net8.0\StudentBusinessLayer.deps.json
+C:\Users\ibrah\Masaüstü\API_Implementation\StudentBusinessLayer\bin\Debug\net8.0\StudentBusinessLayer.dll
+C:\Users\ibrah\Masaüstü\API_Implementation\StudentBusinessLayer\bin\Debug\net8.0\StudentBusinessLayer.pdb
+C:\Users\ibrah\Masaüstü\API_Implementation\StudentBusinessLayer\bin\Debug\net8.0\StudentDataAccessLayer.dll
+C:\Users\ibrah\Masaüstü\API_Implementation\StudentBusinessLayer\bin\Debug\net8.0\StudentDataAccessLayer.pdb
+C:\Users\ibrah\Masaüstü\API_Implementation\StudentBusinessLayer\obj\Debug\net8.0\StudentBusinessLayer.csproj.AssemblyReference.cache
+C:\Users\ibrah\Masaüstü\API_Implementation\StudentBusinessLayer\obj\Debug\net8.0\StudentBusinessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ibrah\Masaüstü\API_Implementation\StudentBusinessLayer\obj\Debug\net8.0\StudentBusinessLayer.AssemblyInfoInputs.cache
+C:\Users\ibrah\Masaüstü\API_Implementation\StudentBusinessLayer\obj\Debug\net8.0\StudentBusinessLayer.AssemblyInfo.cs
+C:\Users\ibrah\Masaüstü\API_Implementation\StudentBusinessLayer\obj\Debug\net8.0\StudentBusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\ibrah\Masaüstü\API_Implementation\StudentBusinessLayer\obj\Debug\net8.0\StudentBusinessLayer.sourcelink.json
+C:\Users\ibrah\Masaüstü\API_Implementation\StudentBusinessLayer\obj\Debug\net8.0\StudentB.789632EC.Up2Date
+C:\Users\ibrah\Masaüstü\API_Implementation\StudentBusinessLayer\obj\Debug\net8.0\StudentBusinessLayer.dll
+C:\Users\ibrah\Masaüstü\API_Implementation\StudentBusinessLayer\obj\Debug\net8.0\refint\StudentBusinessLayer.dll
+C:\Users\ibrah\Masaüstü\API_Implementation\StudentBusinessLayer\obj\Debug\net8.0\StudentBusinessLayer.pdb
+C:\Users\ibrah\Masaüstü\API_Implementation\StudentBusinessLayer\obj\Debug\net8.0\ref\StudentBusinessLayer.dll

@@ -1,0 +1,13 @@
+C:\Users\ibrah\Masaüstü\API_Implementation\StudentDataAccessLayer\bin\Debug\net8.0\StudentDataAccessLayer.deps.json
+C:\Users\ibrah\Masaüstü\API_Implementation\StudentDataAccessLayer\bin\Debug\net8.0\StudentDataAccessLayer.dll
+C:\Users\ibrah\Masaüstü\API_Implementation\StudentDataAccessLayer\bin\Debug\net8.0\StudentDataAccessLayer.pdb
+C:\Users\ibrah\Masaüstü\API_Implementation\StudentDataAccessLayer\obj\Debug\net8.0\StudentDataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\ibrah\Masaüstü\API_Implementation\StudentDataAccessLayer\obj\Debug\net8.0\StudentDataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ibrah\Masaüstü\API_Implementation\StudentDataAccessLayer\obj\Debug\net8.0\StudentDataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\ibrah\Masaüstü\API_Implementation\StudentDataAccessLayer\obj\Debug\net8.0\StudentDataAccessLayer.AssemblyInfo.cs
+C:\Users\ibrah\Masaüstü\API_Implementation\StudentDataAccessLayer\obj\Debug\net8.0\StudentDataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\ibrah\Masaüstü\API_Implementation\StudentDataAccessLayer\obj\Debug\net8.0\StudentDataAccessLayer.sourcelink.json
+C:\Users\ibrah\Masaüstü\API_Implementation\StudentDataAccessLayer\obj\Debug\net8.0\StudentDataAccessLayer.dll
+C:\Users\ibrah\Masaüstü\API_Implementation\StudentDataAccessLayer\obj\Debug\net8.0\refint\StudentDataAccessLayer.dll
+C:\Users\ibrah\Masaüstü\API_Implementation\StudentDataAccessLayer\obj\Debug\net8.0\StudentDataAccessLayer.pdb
+C:\Users\ibrah\Masaüstü\API_Implementation\StudentDataAccessLayer\obj\Debug\net8.0\ref\StudentDataAccessLayer.dll

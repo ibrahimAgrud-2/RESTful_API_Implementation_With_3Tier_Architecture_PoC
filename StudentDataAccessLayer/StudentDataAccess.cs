@@ -18,17 +18,17 @@ namespace StudentDataAccessLayer
             Name = name;
         }
     }
-    public class Student
+    public class StudentDataAccess
     {
 
 
         public static List<StudentDTO> GetAllStudents()
         {
-            string _connectionString = "Server=localhost;Database=StudentsDB;User Id=sa;Password=sa;Encrypt=False;TrustServerCertificate=True;Connection Timeout=30;";
+             string _connectionString = "Data Source=IBRAHIM;Initial Catalog=StudentsDB;Integrated Security=True;Trust Server Certificate=True";
             List<StudentDTO> Students=new List<StudentDTO>();
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
-                string query = "select * from People ";
+                string query = "select * from students ";
 
                 using (SqlCommand cmd = new SqlCommand(query, connection))
                 {
@@ -45,7 +45,7 @@ namespace StudentDataAccessLayer
                                     (new StudentDTO(
                                        read.GetInt32(read.GetOrdinal("ID")),
                                        read.GetInt32(read.GetOrdinal("age")),
-                                       read.GetFloat(read.GetOrdinal("grade")),
+                                       read.GetInt32(read.GetOrdinal("grade")),
                                        read.GetString(read.GetOrdinal("Name"))
                                     ));
                             }
