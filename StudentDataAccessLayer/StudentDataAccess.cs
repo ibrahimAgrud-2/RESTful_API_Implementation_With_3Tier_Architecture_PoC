@@ -98,12 +98,11 @@ namespace StudentDataAccessLayer
         }
 
 
-        public static List<StudentDTO> GetAverageGrade()
+        public static double GetAverageGrade()
         {
 
-            double average;
+            double average=0;
 
-            List<StudentDTO> Students = new List<StudentDTO>();
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
 
@@ -128,7 +127,7 @@ namespace StudentDataAccessLayer
                     }
                 }
             }
-            return Students;
+            return average;
         }
 
     }
