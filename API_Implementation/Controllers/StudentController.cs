@@ -103,10 +103,10 @@ namespace API_Implementation.Controllers
         {
             if (ID < 1)
             {
-                return BadRequest($"Not Accepted ID {ID}");
+                return BadRequest($"Not Accepted ID {ID }");
             }
 
-            var student = StudentDataSimulation.StudentList.FirstOrDefault(student => student.ID == ID);
+            var student = StudentBusinessLayer.Student.GetStudentByID(ID);
             if (student == null)
             {
                 return NotFound($"No Student with ID {ID}");
