@@ -97,5 +97,39 @@ namespace StudentDataAccessLayer
             return Students;
         }
 
+
+        public static List<StudentDTO> GetAverageGrade()
+        {
+
+            double average;
+
+            List<StudentDTO> Students = new List<StudentDTO>();
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+
+                using (SqlCommand cmd = new SqlCommand("SP_GetAverageGrade", connection))
+                {
+
+
+                    try
+                    {
+                        connection.Open();
+                        object result = cmd.ExecuteScalar();
+                        if (result != DBNull.Value)
+                        {
+                            average = Convert.ToDouble(result);
+                        }
+                        else
+                            average = 0;
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("An error Accurred");
+                    }
+                }
+            }
+            return Students;
+        }
+
     }
 }
