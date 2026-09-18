@@ -1,4 +1,8 @@
 ﻿using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Protocols;
+using System.Net;
+using System.Numerics;
 
 
 namespace StudentDataAccessLayer
@@ -130,5 +134,42 @@ namespace StudentDataAccessLayer
             return average;
         }
 
+
+        public static StudentDTO GetStudentByID(int studentID)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string query = "select * from students where ID=@ID";
+
+                using (SqlCommand cmd = new SqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@ID", studentID);
+
+                    try
+                    {
+                        connection.Open();
+                        using (SqlDataReader read = cmd.ExecuteReader())
+                        {
+                            if (read.Read())
+                            {
+
+                                return new StudentDTO(
+                                       read.GetInt32(read.GetOrdinal("ID")),
+                                       read.GetInt32(read.GetOrdinal("age")),
+                                       read.GetInt32(read.GetOrdinal("grade")),
+                                       read.GetString(read.GetOrdinal("Name"))
+                                    );
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex);
+            
+                    }
+                }
+            }
+            return null;
+        }
     }
 }

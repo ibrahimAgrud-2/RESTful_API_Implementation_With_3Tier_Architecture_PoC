@@ -90,6 +90,7 @@ namespace API_Implementation.Controllers
         }
 
 
+
         [HttpGet("{ID}", Name = "GetStudentById")]
         //Normalde default olarak sadeec 200 ok success kodu dokümante edilmiş olur. Ama bu fonksiyonsa 3 farklı durum var.
         //Yani 3 farklı dönüş tipi olaiblir. Bunu bu API dökümanstasyonuna eklemek için bu attribut'ları ekleriz
