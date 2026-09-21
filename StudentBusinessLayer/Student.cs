@@ -66,10 +66,10 @@ namespace StudentBusinessLayer
             return (this.ID != -1);
         }
 
-        //private bool _UpdateStudent()
-        //{
-        //  //  return StudentData.UpdateStudent(SDTO);
-        //}
+        private bool _UpdateStudent()
+        {
+             return StudentDataAccess.UpdateStudent(studentDTO);
+        }
 
         public bool Save()
         {
