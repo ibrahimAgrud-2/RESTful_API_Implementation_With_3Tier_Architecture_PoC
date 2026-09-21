@@ -135,42 +135,37 @@ namespace StudentDataAccessLayer
         }
 
 
-        public static StudentDTO Find(int studentID)
+        public static StudentDTO GetStudentById(int studentId)
         {
-            using (SqlConnection connection = new SqlConnection(_connectionString))
+            using (var connection = new SqlConnection(_connectionString))
+            using (var command = new SqlCommand("SP_GetStudentById", connection))
             {
-                string query = "SP_GetStudentByID";
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@StudentId", studentId);
 
-                using (SqlCommand cmd = new SqlCommand(query, connection))
+                connection.Open();
+                using (var reader = command.ExecuteReader())
                 {
-                    cmd.Parameters.AddWithValue("@ID", studentID);
-
-                    try
+                    if (reader.Read())
                     {
-                        connection.Open();
-                        using (SqlDataReader read = cmd.ExecuteReader())
-                        {
-                            if (read.Read())
-                            {
-
-                                return new StudentDTO(
-                                       read.GetInt32(read.GetOrdinal("ID")),
-                                       read.GetInt32(read.GetOrdinal("age")),
-                                       read.GetInt32(read.GetOrdinal("grade")),
-                                       read.GetString(read.GetOrdinal("Name"))
-                                    );
-                            }
-                        }
+                        return new StudentDTO
+                        (
+                            reader.GetInt32(reader.GetOrdinal("Id")), 
+                            reader.GetInt32(reader.GetOrdinal("Age")),
+                               reader.GetInt32(reader.GetOrdinal("Grade")),
+                            reader.GetString(reader.GetOrdinal("Name"))
+                         
+                        );
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        Console.WriteLine(ex);
-            
+                        return null;
                     }
                 }
             }
-            return null;
         }
+
+
         public static int AddStudent(StudentDTO StudentDTO)
         {
             using (var connection = new SqlConnection(_connectionString))

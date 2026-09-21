@@ -47,7 +47,7 @@ namespace StudentBusinessLayer
         }
         public static Student Find(int ID)
         {
-            StudentDTO studentDTO = StudentDataAccess.Find(ID);
+            StudentDTO studentDTO = StudentDataAccess.GetStudentById(ID);
 
             if (studentDTO != null)
                 return new Student(studentDTO, Mode.enUpdate);
