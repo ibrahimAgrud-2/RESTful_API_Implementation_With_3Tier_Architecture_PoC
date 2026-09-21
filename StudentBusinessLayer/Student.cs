@@ -96,5 +96,10 @@ namespace StudentBusinessLayer
             return false;
         }
 
+
+        public static bool DeleteStudent(int ID)
+        {
+            return StudentDataAccess.DeleteStudent(ID);
+        }
     }
 }
