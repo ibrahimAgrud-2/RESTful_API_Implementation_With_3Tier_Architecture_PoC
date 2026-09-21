@@ -1,8 +1,4 @@
 ﻿using Microsoft.Data.SqlClient;
-using Microsoft.Extensions.Logging;
-using Microsoft.IdentityModel.Protocols;
-using System.Net;
-using System.Numerics;
 
 
 namespace StudentDataAccessLayer
@@ -63,6 +59,9 @@ namespace StudentDataAccessLayer
             }
             return Students;
         }
+
+
+
 
         public static List<StudentDTO> GetPassedStudents()
         {
@@ -135,11 +134,11 @@ namespace StudentDataAccessLayer
         }
 
 
-        public static StudentDTO GetStudentByID(int studentID)
+        public static StudentDTO Find(int studentID)
         {
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
-                string query = "select * from students where ID=@ID";
+                string query = "SP_GetStudentByID";
 
                 using (SqlCommand cmd = new SqlCommand(query, connection))
                 {

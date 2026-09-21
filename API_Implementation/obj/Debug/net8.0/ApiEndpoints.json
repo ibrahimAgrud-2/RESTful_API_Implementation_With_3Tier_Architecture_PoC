@@ -1,91 +1,6 @@
 [
   {
     "ContainingType": "API_Implementation.Controllers.StudentController",
-    "Method": "AddNewStudent",
-    "RelativePath": "api/Students",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "newStudent",
-        "Type": "API_Implementation.Student",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 400
-      },
-      {
-        "Type": "API_Implementation.Student",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 201
-      }
-    ]
-  },
-  {
-    "ContainingType": "API_Implementation.Controllers.StudentController",
-    "Method": "UpdateStudent",
-    "RelativePath": "api/Students/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "updatedStudent",
-        "Type": "API_Implementation.Student",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "API_Implementation.Student",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      },
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 400
-      },
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 404
-      }
-    ],
-    "EndpointName": "UpdateStudent"
-  },
-  {
-    "ContainingType": "API_Implementation.Controllers.StudentController",
     "Method": "GetStudentByID",
     "RelativePath": "api/Students/{ID}",
     "HttpMethod": "GET",
@@ -100,7 +15,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "API_Implementation.Student",
+        "Type": "StudentDataAccessLayer.StudentDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -128,46 +43,6 @@
       }
     ],
     "EndpointName": "GetStudentById"
-  },
-  {
-    "ContainingType": "API_Implementation.Controllers.StudentController",
-    "Method": "DeleteStudent",
-    "RelativePath": "api/Students/{ID}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "ID",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 400
-      },
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 404
-      },
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 204
-      }
-    ]
   },
   {
     "ContainingType": "API_Implementation.Controllers.StudentController",
