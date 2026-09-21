@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Hosting;
+using StudentBusinessLayer;
 using StudentDataAccessLayer;
 using System;
 using System.Data;
@@ -115,6 +116,33 @@ namespace API_Implementation.Controllers
             //normalde DVLD gibi projelerde de Find yaptığımızda tüm objeyi döndürüyorduk fonksiyonşarı ile birlikte. Ama burada client zaten o fonksiyonları kullanamaz. Bu yüzden JSON dosyasını şişirmeke adına  direk client'in işine yarayacak olan 
             //Bilgilileri dönderiyoruz.
             return Ok(student.studentDTO);
+        }
+
+
+        [HttpPost]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public ActionResult<Student> AddNewStudent(StudentDTO newStudentDTO)
+        {
+
+            //we validate the data here
+            if (newStudentDTO == null || string.IsNullOrEmpty(newStudentDTO.Name) || newStudentDTO.Age < 0 || newStudentDTO.Grade < 0)
+            {
+                return BadRequest("Invalid student data.");
+            }
+
+            //newStudent.Id = StudentDataSimulation.StudentsList.Count > 0 ? StudentDataSimulation.StudentsList.Max(s => s.Id) + 1 : 1;
+
+            StudentBusinessLayer.Student student = new StudentBusinessLayer.Student(newStudentDTO);
+            student.Save();
+
+            newStudentDTO.ID = student.ID;
+
+            //we return the DTO only not the full student object
+            //we dont return Ok here,we return createdAtRoute: this will be status code 201 created.
+            return CreatedAtRoute("GetStudentById", new { id = newStudentDTO.ID }, newStudentDTO);
+
         }
 
     }

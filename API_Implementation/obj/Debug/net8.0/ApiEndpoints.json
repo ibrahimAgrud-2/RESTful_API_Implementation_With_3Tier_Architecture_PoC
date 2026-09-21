@@ -1,6 +1,46 @@
 [
   {
     "ContainingType": "API_Implementation.Controllers.StudentController",
+    "Method": "AddNewStudent",
+    "RelativePath": "api/Students",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "newStudentDTO",
+        "Type": "StudentDataAccessLayer.StudentDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "StudentBusinessLayer.Student",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 201
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Implementation.Controllers.StudentController",
     "Method": "GetStudentByID",
     "RelativePath": "api/Students/{ID}",
     "HttpMethod": "GET",

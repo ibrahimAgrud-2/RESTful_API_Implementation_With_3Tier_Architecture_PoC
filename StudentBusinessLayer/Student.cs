@@ -23,7 +23,7 @@ namespace StudentBusinessLayer
             get { return new StudentDTO(this.ID,this.Age,this.Grade,this.Name);}
         }
 
-        public Student(StudentDTO studentDTO,Mode mode)
+        public Student(StudentDTO studentDTO,Mode mode=Mode.enAddNew)
         {
             this.Age = studentDTO.Age;
             this.ID = studentDTO.ID;
@@ -89,7 +89,7 @@ namespace StudentBusinessLayer
 
                 case Mode.enUpdate:
 
-                    return _UpdateStudent();
+                    return false;
 
             }
 
