@@ -144,6 +144,37 @@ namespace API_Implementation.Controllers
             return CreatedAtRoute("GetStudentById", new { id = newStudentDTO.ID }, newStudentDTO);
 
         }
+        //here we use http put method for update
+        [HttpPut("{id}", Name = "UpdateStudent")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public ActionResult<StudentDTO> UpdateStudent(int id, StudentDTO updatedStudent)
+        {
+            if (id < 1 || updatedStudent == null || string.IsNullOrEmpty(updatedStudent.Name) || updatedStudent.Age < 0 || updatedStudent.Grade < 0)
+            {
+                return BadRequest("Invalid student data.");
+            }
 
+            //var student = StudentDataSimulation.StudentsList.FirstOrDefault(s => s.Id == id);
+
+            StudentBusinessLayer.Student student = StudentBusinessLayer.Student.Find(id);
+
+
+            if (student == null)
+            {
+                return NotFound($"Student with ID {id} not found.");
+            }
+
+
+            student.Name = updatedStudent.Name;
+            student.Age = updatedStudent.Age;
+            student.Grade = updatedStudent.Grade;
+            student.Save();
+
+            //we return the DTO not the full student object.
+            return Ok(student.studentDTO);
+
+        }
     }
 }
